@@ -12,5 +12,5 @@ jobs:
        run: echo "bye"
      - name : say hello to user
        env:
-         $USER: "Ankita"
+         USER: "Ankita"
        run: echo "hello $USER"
