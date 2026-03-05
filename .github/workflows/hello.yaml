@@ -10,3 +10,5 @@ jobs:
        run: echo "hii"
      - name: say bye to all
        run: echo "bye"
+     - name : say hello to user
+       run: echo "hello $USER"
