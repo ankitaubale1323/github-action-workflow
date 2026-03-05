@@ -1,0 +1,28 @@
+name: cicd
+on: workflow_dispatch
+jobs:
+  Code:
+    runs-on: ubuntu-latest
+ steps:
+  - name: code building
+    run: echo "code is building"
+  vesrion:
+    runs-on: ubuntu-latest
+  steps: 
+  - name: check docker version
+    run: docker --version
+  scanning:
+    runs-on: ubuntu-latest
+  steps:
+  - name: scan docker image
+    run: echo "scanning"
+  pods:
+    runs-on: ubuntu-latest
+  steps:
+  - name: creating pod
+    run: echo "creating pod"
+  notify:
+    runs-on: ubuntu-latest
+  steps:
+  - name: email "notifcation"
+    run: echo "notify"
