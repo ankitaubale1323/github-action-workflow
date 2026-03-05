@@ -1,5 +1,4 @@
 name: hello
-$USER: "Ankita"
 on: 
  push: 
   branches: [main]
