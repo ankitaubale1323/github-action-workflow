@@ -1,4 +1,5 @@
 name: hello
+$USER: "Ankita"
 on: 
  push: 
   branches: [main]
@@ -11,4 +12,6 @@ jobs:
      - name: say bye to all
        run: echo "bye"
      - name : say hello to user
+       env:
+         $USER: "Ankita"
        run: echo "hello $USER"
