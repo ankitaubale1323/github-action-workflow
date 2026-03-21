@@ -1,4 +1,4 @@
-name: greet-cicd
+name: First GitHub Actions Workflow
 
 on:
   push:
@@ -8,7 +8,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: check code
-        run:  action/checkout@v4
-      - name: Say hi to all
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say Hello
         run: echo "Hello from GitHub Actions!"
+
+      - name: Print Date & Time
+        run: date
+
+      - name: Print Branch Name
+        run: echo "Branch: ${{ github.ref_name }}"
+
+      - name: List Files
+        run: ls -la
+
+      - name: Print OS
+        run: echo "Runner OS: $RUNNER_OS"
