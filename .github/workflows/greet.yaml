@@ -1,0 +1,12 @@
+name: greet-cicd
+
+on:
+  push:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hi to all
+        run: echo "Hello from GitHub Actions!"
