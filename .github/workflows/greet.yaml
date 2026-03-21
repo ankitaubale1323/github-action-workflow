@@ -8,5 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: check code
+        run:  action/checkout@v4
       - name: Say hi to all
         run: echo "Hello from GitHub Actions!"
