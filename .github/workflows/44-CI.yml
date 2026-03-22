@@ -23,7 +23,8 @@ jobs:
       - name: Use Secret
         env:
           MY_SECRET: ${{ secrets.MY_SECRET_MESSAGE }}
-        run: echo "Length: ${#MY_SECRET}"
+        run: |
+         echo "Length: ${#MY_SECRET}"
 
       - name: Create File
         run: echo "Hello CI" > file.txt
