@@ -1,0 +1,47 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  file-size-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check file sizes
+        run: |
+          echo "Checking file sizes..."
+          find . -type f -size +1M && echo "Large file found!" && exit 1 || echo "All files OK"
+
+  branch-name-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate branch name
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          echo "Branch: $BRANCH"
+
+          if [[ "$BRANCH" =~ ^(feature|fix|docs)/.* ]]; then
+            echo "Branch name valid ✅"
+          else
+            echo "Invalid branch name ❌"
+            exit 1
+          fi
+
+  pr-body-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR body
+        run: |
+          BODY="${{ github.event.pull_request.body }}"
+          
+          if [ -z "$BODY" ]; then
+            echo "Warning: PR description is empty ⚠️"
+          else
+            echo "PR description exists ✅"
+          fi
