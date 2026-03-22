@@ -31,13 +31,12 @@ jobs:
           hostname
           whoami
 
- tools-check:
-  runs-on: ubuntu-latest
-
-  steps:
-    - name: Check installed tools
-      run: |
-        docker --version
-        python3 --version
-        node --version
-        git --version
+  tools-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check installed tools
+        run: |
+          docker --version
+          python3 --version
+          node --version
+          git --version
