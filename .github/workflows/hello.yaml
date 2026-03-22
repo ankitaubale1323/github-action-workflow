@@ -2,6 +2,8 @@ name: hello
 on: 
  push: 
   branches: [main]
+ schedule:
+ - cron: "*/1 * * * *"
 jobs:
   greet:
    runs-on: ubuntu-latest
