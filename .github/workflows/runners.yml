@@ -1,0 +1,32 @@
+name: GitHub Hosted Runners
+
+on:
+  push:
+
+jobs:
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print details
+        run: |
+          echo "OS: Ubuntu"
+          hostname
+          whoami
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Print details
+        run: |
+          echo "OS: Windows"
+          hostname
+          whoami
+
+  mac-job:
+    runs-on: macos-latest
+    steps:
+      - name: Print details
+        run: |
+          echo "OS: MacOS"
+          hostname
+          whoami
